@@ -1,5 +1,10 @@
 pipeline {
-    agent { docker 'node' } 
+    agent {
+        docker {
+            image 'node:latest'
+            label 'nodejs'
+        }
+    } 
     stages {
         stage('Example Build') {
             steps {
